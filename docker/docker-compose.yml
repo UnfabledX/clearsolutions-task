@@ -11,7 +11,7 @@ services:
       - db-data:/var/lib/postgresql/data
 
   clearsolutions-service:
-    image: docker.io/library/clearsolutions-image
+    image: unfabled/clearsolutions:task-0.0.1
     restart: on-failure
     environment:
       POSTGRES_USER: admin-user
