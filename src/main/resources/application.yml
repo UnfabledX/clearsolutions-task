@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: test-task
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: task
+
+  flyway:
+    schemas: task
+    locations: db/migration/base
+
+  datasource:
+    username: admin-user
+    password: password
+    url: jdbc:postgresql://localhost:5450/postgres
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+
+user:
+  age: 18
+
+springdoc:
+  swagger-ui:
+    title: Clear Solutions API
+
+    description: "Task for Junior/Middle Java Developer Position \n
+                - Requirements: \n
+                - 1. The User has the following fields: \n
+                - 1.1. Email (required). Add validation against email pattern \n
+                - 1.2. First name (required) \n
+                - 1.3. Last name (required) \n
+                - 1.4. Birth date (required). Value must be earlier than current date \n
+                - 1.5. Address (optional) \n
+                - 1.6. Phone number (optional) \n
+                - 2. It has the following functionality: \n
+                - 2.1. Create user. It allows to register users who are more than [18] years old. The value [18] should be taken from properties file. \n
+                - 2.2. Update one/some user fields \n
+                - 2.3. Update all user fields \n
+                - 2.4. Delete user \n
+                - 2.5. Search for users by birth date range. Add the validation which checks that 'From' is less than 'To'. \n
+                      Should return a list of objects \n
+                - 3. Code is covered by unit tests using Spring \n
+                - 4. Code has error handling for REST \n
+                - 5. API responses are in JSON format"
