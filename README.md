@@ -1,7 +1,7 @@
 # ClearSolutions Task
 
-1. This application can be run in docker containers. Find docker-compose.yml in folder `/docker`.
-   For brevity and educational reasons env variables is provided in the docker-compose.yml file.
+1. This application can be run in docker containers. Find `docker-compose.yml` in the folder `/docker`.
+   For brevity and educational reasons env variables are provided in the `docker-compose.yml` file.
    In order to run application just open terminal at the folder `/docker` and execute the command
    `docker-compose up -d --build` 
 
