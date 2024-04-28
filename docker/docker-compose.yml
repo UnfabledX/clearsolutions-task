@@ -1,16 +1,27 @@
 services:
-  postgres:
+  database:
     image: postgres:latest
     environment:
       POSTGRES_USER: admin-user
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: jdbc:postgresql://localhost:5432/postgres
+      POSTGRES_DB: postgres
     ports:
       - "5450:5432"
     volumes:
       - db-data:/var/lib/postgresql/data
 
-
+  clearsolutions-service:
+    image: docker.io/library/clearsolutions-image
+    restart: on-failure
+    environment:
+      POSTGRES_USER: admin-user
+      POSTGRES_PASSWORD: password
+      POSTGRES_URL: jdbc:postgresql://database:5432/postgres
+    ports:
+      - "8080:8080"
+    depends_on:
+      database:
+        condition: service_started
 
 volumes:
   db-data:

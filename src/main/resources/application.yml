@@ -14,9 +14,9 @@ spring:
     locations: db/migration/base
 
   datasource:
-    username: admin-user
-    password: password
-    url: jdbc:postgresql://localhost:5450/postgres
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    url:  ${POSTGRES_URL}
 
 logging:
   level:
